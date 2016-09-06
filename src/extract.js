@@ -4,7 +4,7 @@ var minimatch = require("minimatch");
 
 function parse(content, options) {
 
-    content = content.replace(/\<\!--.*?--\>/gi, '');
+    content = content.replace(/\<\!--[.\r\n]*?--\>/gi, '');
 
 
     var infos = {};

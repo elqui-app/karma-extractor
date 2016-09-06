@@ -1,6 +1,6 @@
 {
   "name": "karma-extractor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Extract informations (path to js, app name) from index.html to make karma.conf.js more sustainable/maintainable",
   "main": "src/extract.js",
   "scripts": {
