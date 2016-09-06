@@ -1,0 +1,29 @@
+{
+  "name": "karma-extractor",
+  "version": "0.1.0",
+  "description": "Extract informations (path to js, app name) from index.html to make karma.conf.js more sustainable/maintainable",
+  "main": "src/extract.js",
+  "scripts": {
+    "test": "mocha test/test-extract.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elqui-app/karma-extractor.git"
+  },
+  "keywords": [
+    "karma"
+  ],
+  "author": "Thibault Friedrich <tf@elqui.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elqui-app/karma-extractor/issues"
+  },
+  "homepage": "https://github.com/elqui-app/karma-extractor#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "dependencies": {
+    "minimatch": "^3.0.3"
+  }
+}

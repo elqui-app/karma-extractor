@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8' />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Generate a strong password</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.css" >
+        <link rel='stylesheet' href='style/style.css' />
+        <link rel="icon" type="image/png" href="img/p.png" />
+
+	</head>
+	<body ng-app="generatePassword" ng-controller="IndexCtrl" ng-click="hideSettings($event)" class="ui">
+        <modal show="showConvince"></modal>
+        <header class="header-top">
+            <div class="header-top-logo-container">
+                <img src="img/p.png" class="header-logo">
+            </div>
+            </div>
+            <div class="header-top-buttons">
+                <!-- <a href="">Why should you always generate-password.github.io?</a> -->
+                <!-- <span class="header-top-button" ng-click="refresh()" data-tooltip="Generate a new password" data-inverted="" data-position="bottom right">
+                    <i class="icon refresh big" ng-class="{'loading':refreshing}" ></i>
+                </span> -->
+                <span class="header-top-button" ng-click="convince($event)" data-tooltip="Why should you use it." data-inverted="" data-position="bottom right">
+                    <i class="icon info big" ></i>
+                </span>
+                <span class="header-top-button" ng-click="toggleSettings($event)" data-tooltip="Settings" data-inverted="" data-position="bottom right">
+                    <i class="icon settings big" ></i>
+                </span>
+            </div>
+        </header>
+
+        <div class="invisible"></div>
+        <div class="main">
+             <!-- <div class="ui right labeled input massive">
+                <div class="ui basic label">
+                  kg
+                </div>
+              <input type="text" placeholder="Enter weight..">
+              <div class="ui basic label">
+                kg
+              </div>
+            </div> -->
+            <password new-password="newPassword"></password>
+
+            <span class="main-button" ng-click="refresh()">
+                <i class="icon refresh big" ng-class="{'loading':refreshing}" ></i>
+            </span>
+
+        </div>
+        <div class="invisible"></div>
+        <footer class="footer">
+            Made with <i class="icon heart"></i>from Grenoble
+        </footer>
+
+        <div class="settings-panel" ng-class="{'settings-panel-active':settingsActive}" ng-click="$event.stopPropagation()">
+            <div class="settings-panel-button" ng-click="hideSettings()">
+                <i class="ui icon close large"></i>
+            </div>
+            <h1 class="settings-panel-title">Customize your password</h1>
+            <div class="settings-panel-content">
+                <form class="ui form">
+                  <div class="field" data-tooltip="The length of the password" data-inverted="" data-position="left center">
+                    <label>Length</label>
+                    <input type="number" name="length" placeholder="Length" ng-model="length" tabindex="0">
+                  </div>
+                  <div class="field" data-tooltip="Avoid using confusing characters" data-inverted="" data-position="left center">
+                    <div class="ui checkbox">
+                      <input type="checkbox" tabindex="1" ng-model="excludeSimilars" id="exlude-similars" >
+                      <label for="exlude-similars">Exclude similars characters</label>
+                    </div>
+                  </div>
+                  <div class="field" ng-show="excludeSimilars"  data-tooltip="Confusing characters to avoid" data-inverted="" data-position="left center">
+                    <label>Similar characters</label>
+                    <input type="text" tabindex="2" name="similarCharacters" placeholder="Similars characters" ng-model="similarCharacters">
+                  </div>
+                  <div class="field" data-tooltip="The password will be generated from these characters" data-inverted="" data-position="left center">
+                    <label>Pool</label>
+                    <textarea placeholder="Pool" ng-model="pool" rows="3" ></textarea>
+                  </div>
+                  <!-- <div class="field">
+                    <div class="ui checkbox">
+                      <input type="checkbox" tabindex="0" class="hidden">
+                      <label>I agree to the Terms and Conditions</label>
+                    </div>
+                  </div> -->
+                  <!-- <button class="ui button" type="submit">Submit</button> -->
+                </form>
+            </div>
+            <div class="settings-panel-cookies">
+                <!-- <button class="positive ui button large right labeled icon settings-panel-cookies-save"><i class="save icon right"></i>Save my choices</button> -->
+
+                <div class="ui massive form">
+                  <div class="field">
+                    <div class="ui toggle checkbox black" data-tooltip="Your settings will be saved in cookies" data-inverted="" data-position="left center">
+                      <input type="checkbox" ng-model="save" id="save" >
+                      <label for="save" >Save my settings</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="settings-panel-background" ng-show="settingsActive" ng-click="hideSettings()"></div> -->
+
+
+
+  </body>
+  <!-- <script src="scripts/comment.js"></script> -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/generate-password.js"></script>
+  <script src="scripts/password.js"></script>
+  <script src="scripts/modal.js"></script>
+
+
+</html>
