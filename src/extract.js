@@ -4,9 +4,9 @@ var minimatch = require("minimatch");
 
 function parse(content, options) {
 
-    content = content.replace(/\<\!--[.\r\n]*?--\>/gi, '');
-
-
+    // content = content.replace(/\<\!--([.\n\r]*)?--\>/gi, '');
+    content = content.replace(/\<\!--(.|\n|\n\r|\r\n)*?--\>/gi, '');
+    // console.log(content)
     var infos = {};
 
     var appNameMatch = content.match(/ng-app=['"]([^'"]*)['"]/);
